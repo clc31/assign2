@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/showstudent.css">
+    <script src="/js/student.js" defer></script>
+</head>
+<body>
+    <header><h1>Update Student</h1></header>
+    <main>
+    <form action="/student/update" method = "post" class = "rowshow" onsubmit="return validateForm()" >
+    <table>
+        <tr>
+            <td>Student ID</td><td><input type="text" id="StudID" name="StudID" th:value="${sel_student.uid}" readonly ></td>
+        </tr>
+        <tr>
+            <td>Name </td><td><input type="text" id="name" name="name" th:value="${sel_student.name}" onchange="checkbound(1,'lower_bounds1')"></td>
+        </tr>
+        <tr>
+            <td>Height (cm)</td><td><input type="text" id="height" name="height" th:value="${sel_student.height}" onchange="checkbound(2,'lower_bounds2')"></td>
+        </tr>
+        <tr>
+            <td>Weight (kg)</td><td><input type="text" id="weight" name="weight" th:value="${sel_student.weight}" onchange="checkbound(3,'lower_bounds3')"></td>
+        </tr>
+        <tr>
+            <td>Hair Color</td><td>  <select id="haircolor" name="haircolor">
+                <option value="black" th:selected="${sel_student.haircolor == 'black'}">black</option>
+                <option value="brown" th:selected="${sel_student.haircolor == 'brown'}">brown</option>
+                <option value="red" th:selected="${sel_student.haircolor == 'red'}">red</option>
+                <option value="yellow" th:selected="${sel_student.haircolor == 'yellow'}">yellow</option>
+                <option value="gold" th:selected="${sel_student.haircolor == 'gold'}">gold</option>
+                
+              </select>
+            </td>
+        </tr>
+        <tr>
+            <td>GPA</td><td><input type="text" id="gpa" name="gpa" th:value="${sel_student.gpa}" onchange="checkbound(5,'lower_bounds5')"></td>
+        </tr>
+    </table>
+
+    <input class="btn btn-primary" type="submit" value="Update">
+    </form>
+    <div  class="sel">
+    <form action="/student/delete" method = "post">
+        <p>Press below button to delete student</p>
+        <input type="hidden" id="del_ID" name="del_ID" th:value="${sel_student.uid}" >
+        <input class="btn btn-primary" type="submit" value="Delete">
+    </form>
+    </div>
+    <form action="/student/view" >
+        <div>
+            <input class="btn btn-primary" type="submit" value="Back HOME without update">
+        </div>
+    </form>
+    </main>
+</body>
+</html>

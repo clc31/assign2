@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/css/addStudent.css">
+    <script src="/js/student.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>New Student</h1>
+    </header>
+    <main>
+    <div class = "rowshow">
+        <div >
+            <form action ="/student/add" method = "post" onsubmit="return validateForm()">
+
+                <table>
+                    <tr>
+                        <td>Name </td><td><input type="text" id="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Height (kg)</td><td><input type="text" id="height" name="height" placeholder="Input an Integer"></td>
+                    </tr>
+                    <tr>
+                        <td>Weight (cm)</td><td><input type="text" id="weight" name="weight" placeholder="Input an Integer"></td>
+                    </tr>
+                    <tr>
+                        <td>Hair Color</td><td>  <select id="haircolor" name="haircolor">
+                            <option value="black" >black</option>
+                            <option value="brown" >brown</option>
+                            <option value="red" >red</option>
+                            <option value="yellow" >yellow</option>
+                            <option value="gold" >gold</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GPA</td><td><input type="text" id="gpa" name="gpa" ></td>
+                    </tr>
+                </table>
+                <div >
+                    <input class="btn btn-primary" type="submit" value="Create">
+                </div>
+            </form>
+        </div>
+        <form action="/student/view" >
+            <div>
+                <input class="btn btn-primary" type="submit" value="Back HOME without update">
+            </div>
+        </form>
+    
+    </div>
+    </main>
+</body>
+</html>

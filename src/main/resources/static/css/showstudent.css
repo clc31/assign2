@@ -1,0 +1,40 @@
+
+
+.rowshow {
+
+    float: left;
+    background-color: rgb(223, 247, 246);
+    color: black;
+    padding : 10px;
+    margin: 4px;
+    width : 80%;
+
+  }
+  .studenticon {
+    float: left;
+    background-color: rgb(238, 247, 223);
+    text-align: center;
+    padding : 2px;
+    margin: 1px;
+    border: solid black;
+  }
+
+  h1 {
+    color:brown;
+    font-size: 16pt;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .selectstudent {
+    float:none;
+    background-color: rgb(238, 247, 223);
+    text-align: center;
+    padding : 2px;
+    margin: 1px;
+  }
+
+  .sel {
+    float:none;
+    text-align: center;
+    width : 50%;
+  }

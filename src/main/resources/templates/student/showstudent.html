@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/showstudent.css">
+    <script src="/js/student.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Student Database</h1>
+        <form action="/addStudent.html" >
+        <div>
+            <input class="btn btn-primary" type="submit" value="Add a New Student">
+        </div>
+        </form>
+    </header>
+    <main>
+        <div class="rowshow">
+      
+            <div th:each="student:${st}" >
+                <div th:style="'color: '+${student.haircolor}+'; width: '+${student.weight}+'pt ; height: '+${student.height}/2+'pt'" class="studenticon" th:onclick="'clickfunction('+${student.uid}+')'">
+                     <span th:text="${student.name}"></span><br>
+                     <span th:text="${student.gpa}"></span><br>
+                    <!-- <div th:switch="${student.name}">
+                        <span th:case="Bobby">HEY! It's the instructor!!!</span>
+                        <span th:case="Steve"></span>
+                        <span th:case="*">General student</span>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+        <form action="/student/display" method = "post" class="sel">
+            <br>
+            <input type="text" id="sel_stud" name="sel_stud" placeholder="Click Icon to get Student ID" readonly>
+            <input class="btn btn-primary" type="submit" value="Show Details">
+        </form>
+    </main>
+</body>
+</html>
