@@ -4,6 +4,6 @@ RUN mvn clean package -DskipTests
 
 
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/assign2-0.0.1-SNAPSHOT.jar assign2.jar
+COPY --from=build /target/students-0.0.1-SNAPSHOT.jar students.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","assign2.jar"]
+ENTRYPOINT ["java","-jar","students.jar"]
